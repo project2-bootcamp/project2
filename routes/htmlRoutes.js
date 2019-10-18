@@ -11,7 +11,18 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+    // htmlroutes2
+    // if (req.user) {
+    //   res.redirect("/search");
+    // }
+    // res.sendFile(path.join(__dirname, "../public/signup.html"));
+//  htmlroutes3
+// if (req.user) {
+//   res.redirect("/members");
+// }
+// res.sendFile(path.join(__dirname, "../public/signup.html"));
+
   });
 
   app.get("/login", function(req, res) {
@@ -20,6 +31,13 @@ module.exports = function(app) {
       res.redirect("/members");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
+  
+  // htmlroutes2
+  // if (req.user) {
+  //   res.redirect("/search");
+  // }
+  // res.sendFile(path.join(__dirname, "../public/login.html"));
+
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -27,5 +45,9 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+  // htmlroutes2
+  // app.get("/search", isAuthenticated, function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/search.html"));
+  // });
 
 };

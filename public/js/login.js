@@ -13,6 +13,7 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
+      alert("Invalid Username or Password")
       return;
     }
 
