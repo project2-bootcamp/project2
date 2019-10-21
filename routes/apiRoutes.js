@@ -22,7 +22,7 @@ app.post("/api/signup", function(req, res) {
 
 app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    res.redirect("/login");
 });
 
 app.get("/api/user_data", function(req, res) {
