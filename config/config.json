@@ -19,7 +19,7 @@
   "production": {
     "use_env_variable": "JAWSDB_URL",
     "engines": {
-      "node": "12.*"
+      "node": "12.13.0"
     }
   }
 }
