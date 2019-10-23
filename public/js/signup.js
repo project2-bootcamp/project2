@@ -1,7 +1,15 @@
 $(document).ready(function() {
 
-M.AutoInit();
-
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true,
+    shift: 0
+  });
+  autoplay()   
+function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 4500);
+}
 
   // Getting references to our form and input
   var signUpForm = $("form.signup");
