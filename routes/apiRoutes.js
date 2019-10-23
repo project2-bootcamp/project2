@@ -1,10 +1,10 @@
 var db = require("../models");
 var passport = require("../config/passport");
 var Spotify = require('node-spotify-api');
-var spotify = new Spotify({
-    id: "5a842289d2ce46ea8f2cd2a6f4647304",
-    secret: "9eaede9f19504fd59402808674913f46"
-})
+var keys = require("../keys");
+console.log(keys);
+
+var spotify = new Spotify(keys.spotify)
 
 
 const axios = require('axios');
@@ -60,40 +60,40 @@ module.exports = function (app) {
 
 
 
-//ticketmaster and google maps api
-app.get('/api/google/:lat/:lng', function (req, res) {
-    console.log(`we're in the backend`);
-    let { lat, lng } = req.params;
-    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyDxTdbiQM9NRtUgYe3cYN86iuXIleDgb04`)
-        .then(function (data) {
-            console.log(`axios to google success`);
-            console.log(data);
-            //console.log(data.data.results);
-            //console.log(data.data.results)
-            var formattedCurrentLoc = data.data.results[0].formatted_address;
-            //console.log(formattedCurrentLoc.split(",")[1]);
-            console.log(`---------------------------------------------`)
-            //console.log(formattedCurrentLoc.split(",")[0]);
-            var city = formattedCurrentLoc.split(",")[1];
-            console.log(city);
-            axios.get(`http://app.ticketmaster.com/discovery/v2/events.json?latlong=${lat},${lng}&radius=50&classificationName=music&apikey=ViAx3nGninoxzArIJ9YGMoKZV01DtmFV`)
-                .then(function (json) {
-                    var events = json.data._embedded.events;
+    //ticketmaster and google maps api
+    app.get('/api/google/:lat/:lng', function (req, res) {
+        console.log(`we're in the backend`);
+        let { lat, lng } = req.params;
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyDxTdbiQM9NRtUgYe3cYN86iuXIleDgb04`)
+            .then(function (data) {
+                console.log(`axios to google success`);
+                console.log(data);
+                //console.log(data.data.results);
+                //console.log(data.data.results)
+                var formattedCurrentLoc = data.data.results[0].formatted_address;
+                //console.log(formattedCurrentLoc.split(",")[1]);
+                console.log(`---------------------------------------------`)
+                //console.log(formattedCurrentLoc.split(",")[0]);
+                var city = formattedCurrentLoc.split(",")[1];
+                console.log(city);
+                axios.get(`http://app.ticketmaster.com/discovery/v2/events.json?latlong=${lat},${lng}&radius=50&classificationName=music&apikey=ViAx3nGninoxzArIJ9YGMoKZV01DtmFV`)
+                    .then(function (json) {
+                        var events = json.data._embedded.events;
 
-                    // Parse the response.
-                    res.json(events)
-                })
-        }
-        ).catch(err => {
-            console.log(err);
-        })
-    // res.json("we worked")
-})
-
-
+                        // Parse the response.
+                        res.json(events)
+                    })
+            }
+            ).catch(err => {
+                console.log(err);
+            })
+        // res.json("we worked")
+    })
 
 
-// module.exports = router;
+
+
+    // module.exports = router;
 
 
     app.get("/api/search/:app", function (req, res) {
