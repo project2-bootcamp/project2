@@ -9,11 +9,15 @@ $(document).ready(function() {
 
   $("#spotify-submit").on("click", function(event){
     event.preventDefault();
+    console.log("u hit this button")
 
    var searchTerm = $("#userSearch").val().trim();
-    $.get("/api/search/" + searchTerm, function(req, res) {
-      
-      return res;
+   console.log(searchTerm);
+   console.log($.get("/api/search/" + searchTerm))
+
+    $.get(`/api/search/${req.params.app}` + searchTerm, function(req, artistData){
+      console.log(artistData);
+      $("#artist-name").text(artistData.name);
     }) 
   })
 

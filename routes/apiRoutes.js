@@ -45,24 +45,64 @@ var spotify = new Spotify({
   secret: "9eaede9f19504fd59402808674913f46"
 })
 
+// spotify
+//   .search({ type: 'track', query: searchRequest })
+//   .then(function(response) {
+
+//     // Artist name
+//     console.log(JSON.stringify(response.tracks.items[0].album.artists[0].name, null, 2));
+
+//     // Album name
+//     console.log(JSON.stringify(response.tracks.items[0].album.name, null, 2));
+
+//     // Album image
+//     console.log(JSON.stringify(response.tracks.items[0].album.images[0]));
+
+//     // Name of Song
+//     console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
+    
+//     // Preview of Song
+//     console.log(JSON.stringify(response.tracks.items[0].preview_url, null, 2));
+//   })
+//   .catch(function(err) {
+//     console.log(err);
+//   })
+// })};
+
 spotify
-  .search({ type: 'track', query: searchRequest })
+  .search({ type: 'artist', query: searchRequest })
   .then(function(response) {
 
     // Artist name
-    console.log(JSON.stringify(response.tracks.items[0].album.artists[0].name, null, 2));
+    console.log(JSON.stringify(response.artists.items[0].name, null, 2));
 
-    // Album name
-    console.log(JSON.stringify(response.tracks.items[0].album.name, null, 2));
+    // Picture
+    console.log(JSON.stringify(response.artists.items[0].images[0].url, null, 2));
 
-    // Album image
-    console.log(JSON.stringify(response.tracks.items[0].album.images[0]));
+    // Spotify Follower Count
+    console.log(JSON.stringify(response.artists.items[0].followers.total, null, 2));
 
-    // Name of Song
-    console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
+
+    var artistData = {
+        name: JSON.stringify(response.artists.items[0].name),
+
+        image: JSON.stringify(response.artists.items[0].images[0].url),
+        
+        followers: JSON.stringify(response.artists.items[0].followers.total)
+    }
+
+    // // Album name
+    // console.log(JSON.stringify(response.tracks.items[0].album.name, null, 2));
+
+    // // Album image
+    // console.log(JSON.stringify(response.tracks.items[0].album.images[0]));
+
+    // // Name of Song
+    // console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
     
-    // Preview of Song
-    console.log(JSON.stringify(response.tracks.items[0].preview_url, null, 2));
+    // // Preview of Song
+    // console.log(JSON.stringify(response.tracks.items[0].preview_url, null, 2));
+    res.json(artistData)
   })
   .catch(function(err) {
     console.log(err);
