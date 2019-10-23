@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "R06k[80]",
+    "password": "rootroot",
     "database": "music_DB",
     "port": 3306,
     "host": "127.0.0.1",
@@ -10,7 +10,7 @@
   },
   "test": {
     "username": "root",
-    "password": "R06k[80]",
+    "password": "rootroot",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
