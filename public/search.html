@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/mapStyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -45,7 +46,7 @@
   <div class="container">
     <!-- ARTIST INFO CARD  -->
     <div class="row">
-      <div class="col s6">
+      <div class="col s4">
         <div class="card">
           <div class="card-image" class="circle">
             <img id = "artist-picture" class="responsive-img">
@@ -61,11 +62,35 @@
       </div>
 
 
-      <!-- MAP CARD -->
-      <div class="col s6">
-        <img src="https://www.google.com/maps/d/thumbnail?mid=1P6TFjf7H9qDfAeaDCET2nVPJuEo&hl=en"
-          class="responsive-img">
+      <!-- <div class="card-container" style="max-height: 350px; overflow-y: auto;">
       </div>
+      </div> -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTdbiQM9NRtUgYe3cYN86iuXIleDgb04&libraries=places&callback=currentLocation"
+        async defer></script>
+      
+      <!-- Replace the value of the key parameter with your own API key. -->
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTdbiQM9NRtUgYe3cYN86iuXIleDgb04&callback=initMap">
+        </script>
+
+
+      <!-- MAP CARD -->
+      <div class="col s4">
+        <!-- <img src="https://www.google.com/maps/d/thumbnail?mid=1P6TFjf7H9qDfAeaDCET2nVPJuEo&hl=en"
+          class="responsive-img"> -->
+          <div id="map"></div>  
+      </div>
+
+
+      <div class="col s4">
+        <!-- <img src="https://www.google.com/maps/d/thumbnail?mid=1P6TFjf7H9qDfAeaDCET2nVPJuEo&hl=en"
+                class="responsive-img"> -->
+                <div class="card-container" style="max-height: 350px; overflow-y: auto;">
+                </div>
+      </div>
+
+
     </div>
   </div>
   </div>
@@ -77,7 +102,17 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTdbiQM9NRtUgYe3cYN86iuXIleDgb04&libraries=places&callback=currentLocation"
+    async defer></script>
+  
+  <!-- Replace the value of the key parameter with your own API key. -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTdbiQM9NRtUgYe3cYN86iuXIleDgb04&callback=initMap">
+    </script>
   <script type="text/javascript" src="js/members.js"></script>
+  <script src="js/musicNear.js"></script>
+  <script src="js/map.js"></script>
 
 </body>
 
