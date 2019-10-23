@@ -1,6 +1,7 @@
 body { background-color: #5CDB95;
         color: #05386B;
 }
+
 form.search,
 form.signup,
 form.login {
@@ -15,7 +16,35 @@ form.login {
   background-color:#05386B;
   color:#EDF5E1;
   padding-left: 2%;
-  /* text-align: center; */
+  z-index: 1;
+}
+
+.carousel{
+  top: 10rem;
+  height: 25rem;
+}
+
+.carousel-item {
+  font-size: 5rem;
+}
+
+#one {
+  padding-top: 10%;
+  background-image: url("./image5.png");
+  background-color: #379683;
+  color: #EDF5E1;
+}
+#two{
+  padding-top: 10%;
+  background-image: url("./image4.png");
+  background-color: #379683;
+  color: #EDF5E1;
+}
+#three {
+  padding-top: 10%;
+  background-image: url("./image2.png");
+  background-color: #379683;
+  color: #EDF5E1;
 }
 
 .footer {
@@ -27,4 +56,10 @@ form.login {
   color:#EDF5E1;
   text-align: center;
 }
+
+.btn {
+  background-color: #379683;
+  color: #05386B;
+}
+
 
