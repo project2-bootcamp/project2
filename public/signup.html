@@ -5,26 +5,49 @@
   <title>Sign Up</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Materialize CSS link -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+  <!-- Materialize CSS link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
-<body>
+<!-- <body> -->
+<header>
   <nav class="nav-wrapper">
     <div class="navbar-header">
-      <a href="#" class="brand-logo">Name of our App</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="/login">Logout</a></li>
-    </ul>
+      <a href="#" class="brand-logo"><i class="material-icons">audiotrack</i> Spotashow</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/login">Logout</a></li>
+      </ul>
     </div>
-</nav>
+  </nav>
+</header>
 <br>
 <br>
+<main>
+
+  <div class="carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+    </div>
+     <div class="carousel-item" id="three" class="responsive-img">
+      <h1>See a Show</h1>
+      <h2>find a performance and buy your tickets</h2>
+    </div>
+    <div class="carousel-item" id="one" class="responsive-img">
+      <h1>Search Artists</h1>
+      <h2>see a profile snapshot of your favorite bands and musicians</h2>
+    </div>
+    <div class="carousel-item" id="two" class="responsive-img">
+      <h1>Find Concerts</h1>
+      <h2>get a sneak peak of live shows happing in your area</h2>
+    </div>
+  </div>
+
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
+        <h3>Sign Up!</h3>
         <form class="signup">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
@@ -40,19 +63,21 @@
           </div>
           <button type="submit" class="btn btn-default">Sign Up</button>
         </form>
-        <br/>
+        <br />
         <p>Or log in <a href="/login">here</a></p>
       </div>
     </div>
   </div>
+</main>
+<br>
+<br>
+<footer>
   <div class="footer">
-    <p>Footer</p>
+    <p>Spotashow</p>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
-
-</body>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/signup.js"></script>
 
 </html>

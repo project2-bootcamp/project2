@@ -1,6 +1,8 @@
 body { background-color: #5CDB95;
         color: #05386B;
+        font-family: 'Raleway', sans-serif;
 }
+
 form.search,
 form.signup,
 form.login {
@@ -15,7 +17,26 @@ form.login {
   background-color:#05386B;
   color:#EDF5E1;
   padding-left: 2%;
-  /* text-align: center; */
+  z-index: 1;
+}
+
+.carousel-item {
+  font-size: 5rem;
+  background-position: center;
+  background-color: #379683;
+  color: #EDF5E1;
+  padding-top: 10%;
+
+}
+
+#one {
+  background-image: url("./image5.png");
+}
+#two {
+  background-image: url("./image6.png");
+}
+#three {
+  background-image: url("./image2.png");
 }
 
 .footer {
@@ -24,7 +45,14 @@ form.login {
   bottom: 0;
   width: 100%;
   background-color:#05386B;
-  color:#EDF5E1;
+  color:#8EE48F;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif
 }
+
+.btn {
+  background-color: #379683;
+  color: #05386B;
+}
+
 
