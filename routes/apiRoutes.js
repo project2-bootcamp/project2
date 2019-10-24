@@ -57,7 +57,7 @@ module.exports = function (app) {
         songPreview: ""
     }
 
-
+    var searchRequest = "";
 
 
     //ticketmaster and google maps api
@@ -67,7 +67,7 @@ module.exports = function (app) {
         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyDxTdbiQM9NRtUgYe3cYN86iuXIleDgb04`)
             .then(function (data) {
                 console.log(`axios to google success`);
-                console.log(data);
+                //console.log(data);                
                 //console.log(data.data.results);
                 //console.log(data.data.results)
                 var formattedCurrentLoc = data.data.results[0].formatted_address;
@@ -77,8 +77,10 @@ module.exports = function (app) {
                 var city = formattedCurrentLoc.split(",")[1];
                 console.log(city);
                 axios.get(`http://app.ticketmaster.com/discovery/v2/events.json?latlong=${lat},${lng}&radius=50&classificationName=music&apikey=ViAx3nGninoxzArIJ9YGMoKZV01DtmFV`)
+                // axios.get(`http://app.ticketmaster.com/discovery/v2/events.json?&classificationName=music&countryCode=US&sort'date,asc'&keyword=chainsmokers&apikey=ViAx3nGninoxzArIJ9YGMoKZV01DtmFV`)
                     .then(function (json) {
                         var events = json.data._embedded.events;
+                        console.log(json);
 
                         // Parse the response.
                         res.json(events)
@@ -97,7 +99,7 @@ module.exports = function (app) {
 
 
     app.get("/api/search/:app", function (req, res) {
-        var searchRequest = req.params.app
+        searchRequest = req.params.app
 
 
 

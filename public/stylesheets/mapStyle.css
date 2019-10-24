@@ -1,8 +1,8 @@
 #map {
     position: fixed;
-    left: 10%;
+    left: 5%;
   height: 500px;
-  width: 600px;
+  width: 400px;
   border-radius: 15px;
 }
 /* Optional: Makes the sample page fill the window. */
@@ -15,4 +15,10 @@ html, body {
 #liveMusic{
   position: relative;
   left: 30%;
+}
+
+.card-container{
+  position: relative;
+  left: 50%;
+
 }

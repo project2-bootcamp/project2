@@ -82,4 +82,44 @@ $(document).on("click", ".card", function () {
 });
 
 
+// function concerts(searchRequest) {
+
+//     // ticketmaster and google maps api
+//     app.get('/api/google/:lat/:lng', function (req, res) {
+//         console.log(`we're in the backend`);
+//         let { lat, lng } = req.params;
+//         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyDxTdbiQM9NRtUgYe3cYN86iuXIleDgb04`)
+//             .then(function (data) {
+//                 console.log(`axios to google success`);
+//                 //console.log(data.data.results[0]);                
+//                 //console.log(data.data.results);
+//                 //console.log(data.data.results)
+//                 var formattedCurrentLoc = data.data.results[0].formatted_address;
+//                 //console.log(formattedCurrentLoc);
+//                 console.log(`---------------------------------------------`)
+//                 //console.log(formattedCurrentLoc.split(",")[0]);
+//                 var city = formattedCurrentLoc.split(",")[1];
+//                 console.log(city);
+//                 // axios.get(`http://app.ticketmaster.com/discovery/v2/events.json?latlong=${lat},${lng}&radius=50&classificationName=music&apikey=ViAx3nGninoxzArIJ9YGMoKZV01DtmFV`)
+//                 axios.get(`http://app.ticketmaster.com/discovery/v2/events.json?&classificationName=music&countryCode=US&sort'date,asc'&keyword=${searchRequest}&apikey=ViAx3nGninoxzArIJ9YGMoKZV01DtmFV`)
+//                     .then(function (json) {
+//                         var events = json.data._embedded.events;
+//                         console.log(json);
+
+//                         // Parse the response.
+//                         res.json(events)
+//                     })
+//             }
+//             ).catch(err => {
+//                 console.log(err);
+//             })
+//         // res.json("we worked")
+//     })
+// };
+
+
+// $("#spotify-submit").on("click", function(){
+//     concerts($("#userSearch").val().trim());
+// });
+
 
